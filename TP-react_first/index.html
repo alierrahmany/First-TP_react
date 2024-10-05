@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@latest/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@latest/umd/react-dom.development.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+  </head>
+  <style>
+    #root {
+      text-align: center;
+    }
+    .header {
+      background-color: #4caf50;
+      color: white;
+      padding: 30px;
+      height: 130px;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 50px;
+    }
+    .header h1 {
+      margin: 0;
+    }
+    .nav {
+      display: flex;
+      gap: 20px;
+    }
+    .nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .contenu {
+      background-color: #f0f0f0;
+      color: #333;
+      padding: 30px;
+      height: 390px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+      flex-direction: column;
+    }
+    button {
+      background-color: #03a9f4;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .inner-content button:hover {
+      background-color: #0288d1;
+    }
+    .inner-content {
+      background-color: #ffffff;
+      color: #000;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 10px;
+      width: 60%;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    .footer {
+      background-color: #ff5722;
+      color: white;
+      padding: 30px;
+      height: 130px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      padding: 0 50px;
+    }
+    .footer p {
+      margin: 0;
+    }
+    .social {
+      display: flex;
+      gap: 15px;
+    }
+    .social a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+  </style>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      //création des composants
+      class Home extends React.Component {
+        // methode qui permet de geneere de code html
+        render() {
+          return (
+            <div>
+              <Header />
+              <Content />
+              <Footer />
+            </div>
+          );
+        }
+      }
+      class Header extends React.Component {
+        // methode qui permet de geneere de code html
+        render() {
+          return (
+            <div className="header">
+              <h1> Header</h1>
+              <nav className="nav">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+              </nav>
+            </div>
+          );
+        }
+      }
+      class Content extends React.Component {
+        // methode qui permet de geneere de code html
+        render() {
+          return (
+            <div className="contenu">
+              <h1>Main Content</h1>
+              <div className="inner-content">
+               
+                <p>
+                  This is the inner content inside the main content area. You can
+                  further divide content sections here.
+                </p>
+                <button>contact me</button>
+              </div>
+            </div>
+          );
+        }
+      }
+      class Footer extends React.Component {
+        // methode qui permet de geneere de code html
+        render() {
+          return (
+            <div className="footer">
+              <p>&copy; 2024 My Website. All rights reserved.</p>
+              <div className="social">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+              </div>
+            </div>
+          );
+        }
+      }
+      // Rendu dans le DOM
+      ReactDOM.render(<Home />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
